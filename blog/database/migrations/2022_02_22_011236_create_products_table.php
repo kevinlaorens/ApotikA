@@ -15,8 +15,13 @@ class CreateProductsTable extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
-            $table->string("product_name",100);
-            $table->bigInteger("product_price");
+            $table->string('Generic Name');
+            $table->string('Form');
+            $table->string('Restriction Formula')->nullable();
+            $table->string('Description')->nullable();
+            $table->boolean('Faskes TK1')->default(false);
+            $table->boolean('Faskes TK2')->default(false);
+            $table->boolean('Faskes TK3')->default(false);
             $table->timestamps();
         });
     }
